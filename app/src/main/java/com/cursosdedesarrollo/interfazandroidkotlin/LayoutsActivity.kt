@@ -32,6 +32,10 @@ class LayoutsActivity : MiActivity() {
         val intent= Intent(this,RelativeLayoutActivity::class.java)
         startActivity(intent)
     }
+    fun goConstraint(view: View):Unit{
+        val intent= Intent(this,ConstraintLayoutActivity::class.java)
+        startActivity(intent)
+    }
 
 
 

@@ -4,4 +4,6 @@
     <string name="title_activity_layouts">LayoutsActivity</string>
     <string name="title_activity_linear_layout">LinearLayoutActivity</string>
     <string name="title_activity_relative_layout">RelativeLayoutActivity</string>
+    <string name="title_activity_constraint_layout">ConstraintLayoutActivity</string>
+    <string name="title_activity_listados">ListadosActivity</string>
 </resources>

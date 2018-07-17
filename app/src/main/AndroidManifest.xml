@@ -46,6 +46,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cursosdedesarrollo.interfazandroidkotlin.LayoutsActivity" />
         </activity>
+        <activity
+            android:name=".ConstraintLayoutActivity"
+            android:label="@string/title_activity_constraint_layout"
+            android:parentActivityName=".LayoutsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cursosdedesarrollo.interfazandroidkotlin.LayoutsActivity" />
+        </activity>
+        <activity
+            android:name=".ListadosActivity"
+            android:label="@string/title_activity_listados"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cursosdedesarrollo.interfazandroidkotlin.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
