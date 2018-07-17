@@ -19,6 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LayoutsActivity"
+            android:label="@string/title_activity_layouts"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cursosdedesarrollo.interfazandroidkotlin.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
