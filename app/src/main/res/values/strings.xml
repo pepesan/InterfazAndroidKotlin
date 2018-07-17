@@ -6,4 +6,5 @@
     <string name="title_activity_relative_layout">RelativeLayoutActivity</string>
     <string name="title_activity_constraint_layout">ConstraintLayoutActivity</string>
     <string name="title_activity_listados">ListadosActivity</string>
+    <string name="title_activity_formulario">FormularioActivity</string>
 </resources>

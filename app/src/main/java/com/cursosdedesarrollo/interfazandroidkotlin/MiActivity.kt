@@ -33,6 +33,11 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.action_formulario -> {
+                var intent = Intent(this,FormularioActivity::class.java)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
