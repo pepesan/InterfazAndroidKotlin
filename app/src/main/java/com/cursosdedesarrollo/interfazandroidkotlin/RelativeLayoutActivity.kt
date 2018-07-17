@@ -1,20 +1,16 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 
-import kotlinx.android.synthetic.main.activity_layouts.*
+import kotlinx.android.synthetic.main.activity_relative_layout.*
 
-class LayoutsActivity : MiActivity() {
+class RelativeLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_layouts)
+        setContentView(R.layout.activity_relative_layout)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
@@ -23,16 +19,5 @@ class LayoutsActivity : MiActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
-    fun goLinear(view: View):Unit{
-        val intent= Intent(this,LinearLayoutActivity::class.java)
-        startActivity(intent)
-    }
-    fun goRelative(view: View):Unit{
-        val intent= Intent(this,RelativeLayoutActivity::class.java)
-        startActivity(intent)
-    }
-
-
 
 }

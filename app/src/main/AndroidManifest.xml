@@ -28,6 +28,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cursosdedesarrollo.interfazandroidkotlin.MainActivity" />
         </activity>
+        <activity
+            android:name=".LinearLayoutActivity"
+            android:label="@string/title_activity_linear_layout"
+            android:parentActivityName=".LayoutsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cursosdedesarrollo.interfazandroidkotlin.LayoutsActivity" />
+        </activity>
+        <activity
+            android:name=".RelativeLayoutActivity"
+            android:label="@string/title_activity_relative_layout"
+            android:parentActivityName=".LayoutsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cursosdedesarrollo.interfazandroidkotlin.LayoutsActivity" />
+        </activity>
     </application>
 
 </manifest>
