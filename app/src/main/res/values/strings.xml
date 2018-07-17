@@ -8,4 +8,5 @@
     <string name="title_activity_listados">ListadosActivity</string>
     <string name="title_activity_formulario">FormularioActivity</string>
     <string name="title_activity_recycler_view">RecyclerViewActivity</string>
+    <string name="title_activity_alert_dialog">AlertDialogActivity</string>
 </resources>

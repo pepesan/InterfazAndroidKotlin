@@ -22,4 +22,9 @@
         android:orderInCategory="100"
         android:title="RecyclerView"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_alert_dialog"
+        android:orderInCategory="100"
+        android:title="Alert Dialog"
+        app:showAsAction="never" />
 </menu>
