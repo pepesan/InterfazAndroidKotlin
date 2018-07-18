@@ -1,5 +1,6 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -9,6 +10,7 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 
+@SuppressLint("Registered")
 open class MiActivity : AppCompatActivity() {
 
 
@@ -45,6 +47,11 @@ open class MiActivity : AppCompatActivity() {
             }
             R.id.action_alert_dialog -> {
                 val intent = Intent(this,AlertDialogActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.action_async_task -> {
+                val intent = Intent(this,AsyncTaskActivity::class.java)
                 startActivity(intent)
                 true
             }

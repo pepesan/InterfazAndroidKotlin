@@ -27,4 +27,9 @@
         android:orderInCategory="100"
         android:title="Alert Dialog"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_async_task"
+        android:orderInCategory="100"
+        android:title="AsyncTask"
+        app:showAsAction="never" />
 </menu>
