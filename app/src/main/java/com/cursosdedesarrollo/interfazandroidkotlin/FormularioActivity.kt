@@ -119,7 +119,10 @@ class FormularioActivity : AppCompatActivity() {
     fun radioClick(v: View) {
         // Perform action on clicks
         val rb = v as RadioButton
-        Toast.makeText(this, rb.text, Toast.LENGTH_SHORT).show()
+        if(rb.id == R.id.radio_red){
+
+        }
+        Toast.makeText(this, "id: $rb.id, Text: $rb.text", Toast.LENGTH_SHORT).show()
     }
 
     // cambio de comportamiento del toggle
@@ -139,7 +142,7 @@ class FormularioActivity : AppCompatActivity() {
     // cambio de comportamiento del boton enviar
     fun sendClick(v: View) {
         // Perform action on clicks
-        var allText = "campo:" + edittext.getText()
+        var allText = "campo:" + edittext.text
         allText = allText + ":checkbox:"
         if (checkbox.isChecked()) {
             allText = allText + "Checked:"
@@ -171,8 +174,8 @@ class FormularioActivity : AppCompatActivity() {
         }
         allText = allText + bluetext
         allText = allText + "rating:"
-        val f = ratingbar.getRating()
-        allText = allText + java.lang.Float.toString(f) + ":"
+        val f = ratingbar.rating
+        allText = allText + ratingbar.rating + ":"
 
         Log.d("app", allText)
         Toast.makeText(this, allText, Toast.LENGTH_LONG).show()
