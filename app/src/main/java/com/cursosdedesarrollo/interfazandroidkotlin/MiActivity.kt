@@ -55,6 +55,11 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.action_notificaciones -> {
+                val intent = Intent(this,NotificacionesActivity::class.java)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

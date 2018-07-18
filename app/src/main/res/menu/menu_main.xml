@@ -32,4 +32,9 @@
         android:orderInCategory="100"
         android:title="AsyncTask"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_notificaciones"
+        android:orderInCategory="100"
+        android:title="Notificaciones"
+        app:showAsAction="never" />
 </menu>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cursosdedesarrollo.interfazandroidkotlin">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -92,6 +94,15 @@
         <activity
             android:name=".AsyncTaskActivity"
             android:label="@string/title_activity_async_task"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cursosdedesarrollo.interfazandroidkotlin.MainActivity" />
+        </activity>
+        <activity
+            android:name=".NotificacionesActivity"
+            android:label="@string/title_activity_notificaciones"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

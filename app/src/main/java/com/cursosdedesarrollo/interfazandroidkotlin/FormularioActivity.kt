@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 
 import kotlinx.android.synthetic.main.activity_formulario.*
 import kotlinx.android.synthetic.main.content_formulario.*
@@ -26,6 +26,40 @@ class FormularioActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setUpViews()
+    }
+
+    private fun setUpViews() {
+        // inicializamos los objetos de la vista
+        radio_red.isChecked = true
+        Toast.makeText(this,
+                "Hasta que no marques la checkbox no podrás salvar",
+                Toast.LENGTH_LONG).show()
+
+        volver.setOnClickListener({
+            finish()
+        })
+        // cambiamos los comportamientos que no son click
+        edittext.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            // If the event is a key-down event on the "enter" button
+            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                // Perform action on key press
+                Toast.makeText(this@FormularioActivity,
+                        edittext.text, Toast.LENGTH_SHORT).show()
+                return@OnKeyListener true
+            }
+            false
+        })
+
+        val i = RatingBar.OnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            Toast.makeText(
+                    this@FormularioActivity,
+                    "New Rating: $rating",
+                    Toast.LENGTH_SHORT).show()
+        }
+        ratingbar.onRatingBarChangeListener = i
+
+
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
