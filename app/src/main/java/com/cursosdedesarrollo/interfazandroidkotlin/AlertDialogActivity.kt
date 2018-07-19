@@ -62,8 +62,5 @@ class AlertDialogActivity : AppCompatActivity() {
         // Display the alert dialog on app interface
         dialog.show()
     }
-    fun showDialog(v:View){
-
-    }
 
 }

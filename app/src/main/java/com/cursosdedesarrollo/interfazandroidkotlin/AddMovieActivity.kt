@@ -6,50 +6,28 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 
-import kotlinx.android.synthetic.main.activity_listados.*
-import kotlinx.android.synthetic.main.content_formulario.*
-import kotlinx.android.synthetic.main.content_listados.*
+import kotlinx.android.synthetic.main.activity_add_movie.*
+import kotlinx.android.synthetic.main.content_add_movie.*
+import kotlinx.android.synthetic.main.movies_row.*
 
-class ListadosActivity : AppCompatActivity() {
-
-    private val datos = mutableListOf("uno", "dos")
-
-    private lateinit var adapter: ArrayAdapter<String>
+class AddMovieActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listados)
+        setContentView(R.layout.activity_add_movie)
         setSupportActionBar(toolbar)
-        /*
+
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
-        */
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        texto.setVisibility(View.GONE)
-        listado.visibility=View.VISIBLE
-
-        adapter = ArrayAdapter<String>(this, R.layout.item, datos)
-        listado.setTextFilterEnabled(true)
-        listado.adapter=adapter
-        //listado.setAdapter(adapter)
-        listado.setOnItemClickListener(AdapterView.OnItemClickListener {
-            parent, view, position, id ->
-            Toast.makeText(this@ListadosActivity, datos[position], Toast.LENGTH_LONG).show()
-            datos.removeAt(position)
-            adapter.notifyDataSetChanged()
-        })
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.listado_main, menu)
+        menuInflater.inflate(R.menu.add_movie_menu, menu)
         return true
     }
 
@@ -58,12 +36,22 @@ class ListadosActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_add_listado -> {
-                datos.add("pepe")
-                adapter.notifyDataSetChanged()
+            R.id.action_save_movie -> {
+                //startActivity(Intent(this,AddMovieActivity::class.java))
+                saveMovie()
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun saveMovie() {
+        if(titleText.text.toString()!="") {
+            val movie = Movie(titleText.text.toString(), genreText.text.toString(), yearText.text.toString())
+            (application as Aplicacion).addData(movie)
+            finish()
+        }else{
+            Toast.makeText(this,"El Campo Title no puede estar vacío",Toast.LENGTH_LONG).show()
         }
     }
 

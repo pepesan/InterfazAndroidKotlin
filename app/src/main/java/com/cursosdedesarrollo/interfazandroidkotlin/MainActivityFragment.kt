@@ -24,15 +24,19 @@ class MainActivityFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
-    private var mViewModel: DatoViewModel= DatoViewModel()
+    lateinit var mViewModel: DatoViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tv.text="Hola Hola"
         mViewModel = ViewModelProviders.of(this).get(DatoViewModel::class.java)
-        button.setOnClickListener({
-            tv.text="Texto cambiado"
+        if(mViewModel.dato == ""){
             mViewModel.dato="Dato Cambiado"
+        }
+        tv.text=mViewModel.dato
+        button.setOnClickListener({
+            mViewModel.dato="Dato Cambiado2"
+            tv.text=mViewModel.dato
             numero++
             mViewModel.datoObservable.value="DatoObservable Cambiado $numero"
         })

@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_notificaciones.*
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.support.v4.app.NotificationCompat
 
@@ -63,7 +62,7 @@ class NotificacionesActivity : AppCompatActivity() {
                 .setChannelId(NOTIFICATION_CHANNEL_ID)
         val resultIntent = Intent(
                 applicationContext,
-                MainActivity::class.java)
+                NotificacionesActivity::class.java)
         val resultPendingIntent = PendingIntent.getActivity(
                 applicationContext,
                 0,
@@ -79,17 +78,18 @@ class NotificacionesActivity : AppCompatActivity() {
     }
 
     fun cambia(v: View) {
-
+        ++numMessages
         val mNotifyBuilder = NotificationCompat.Builder(this,channelName)
                 .setContentTitle("Nuevo Mensaje")
-                .setContentText("Tienes mensajes nuevos!")
+
+                .setContentText("Tienes mensajes "+numMessages+ " nuevos!")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setChannelId(NOTIFICATION_CHANNEL_ID)
 
         // Start of a loop that processes data and then notifies the user
-        val currentText = "Texto"
-        mNotifyBuilder.setContentText(currentText)
-                .setNumber(++numMessages)
+        //val currentText = "Texto"
+        //mNotifyBuilder.setContentText(currentText)
+                //.setNumber(++numMessages)
         val resultIntent = Intent(this, MainActivity::class.java)
         val resultPendingIntent = PendingIntent.getActivity(
                 this,
