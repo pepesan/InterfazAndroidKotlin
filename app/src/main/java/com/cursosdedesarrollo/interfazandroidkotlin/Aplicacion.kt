@@ -65,4 +65,12 @@ class Aplicacion : Application(){
     fun addData(movie: Movie){
         movieList.add(movie)
     }
+    fun findDataByTitle(title: String):Movie{
+        for (item in movieList){
+            if (item.title==title){
+                return item
+            }
+        }
+        return Movie()
+    }
 }

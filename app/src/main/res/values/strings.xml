@@ -12,4 +12,5 @@
     <string name="title_activity_async_task">AsyncTaskActivity</string>
     <string name="title_activity_notificaciones">NotificacionesActivity</string>
     <string name="title_activity_add_movie">AddMovieActivity</string>
+    <string name="title_activity_movie_detail">MovieDetailActivity</string>
 </resources>

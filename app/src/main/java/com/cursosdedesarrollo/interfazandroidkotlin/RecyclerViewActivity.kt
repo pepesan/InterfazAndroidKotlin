@@ -13,9 +13,7 @@ import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_listados.*
 import android.widget.AdapterView.OnItemClickListener
-
-
-
+import android.widget.Toast
 
 class RecyclerViewActivity : AppCompatActivity() {
 
@@ -31,7 +29,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         movieList = (application as Aplicacion).movieList
 
-        mAdapter = MoviesAdapter(movieList)
+        mAdapter = MoviesAdapter(movieList, this)
         val mLayoutManager = LinearLayoutManager(applicationContext)
         reciclerView!!.layoutManager = mLayoutManager
         reciclerView!!.itemAnimator = DefaultItemAnimator()
@@ -39,12 +37,15 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         prepareMovieData()
 
+
+
     }
 
     override fun onResume() {
         super.onResume()
         Log.d("app:RecyclerView","onResume")
     }
+
 
     private fun prepareMovieData() {
         mAdapter!!.notifyDataSetChanged()
