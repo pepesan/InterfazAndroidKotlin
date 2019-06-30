@@ -118,11 +118,12 @@ class FormularioActivity : AppCompatActivity() {
     // cambio de comportamiento de los botones de radio
     fun radioClick(v: View) {
         // Perform action on clicks
-        val rb = v as RadioButton
-        if(rb.id == R.id.radio_red){
+        val rb = v as? RadioButton
+        if(rb?.id == R.id.radio_red){
 
         }
-        Toast.makeText(this, "id: $rb.id, Text: $rb.text", Toast.LENGTH_SHORT).show()
+        val cadenaId = "id"
+        Toast.makeText(this, "$cadenaId: ${rb?.id}, Text: ${rb?.text}", Toast.LENGTH_SHORT).show()
     }
 
     // cambio de comportamiento del toggle
