@@ -1,19 +1,22 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+
 
 import kotlinx.android.synthetic.main.activity_notificaciones.*
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
-import android.support.v4.app.NotificationCompat
+
 
 import android.view.View
 import android.app.NotificationChannel
 import android.graphics.Color
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.app.NotificationCompat
+import com.google.android.material.snackbar.Snackbar
 
 
 class NotificacionesActivity : AppCompatActivity() {
@@ -25,7 +28,7 @@ class NotificacionesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notificaciones)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar as Toolbar?)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

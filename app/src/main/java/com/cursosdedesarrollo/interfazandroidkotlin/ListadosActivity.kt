@@ -2,14 +2,14 @@ package com.cursosdedesarrollo.interfazandroidkotlin
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 import kotlinx.android.synthetic.main.activity_listados.*
 import kotlinx.android.synthetic.main.content_formulario.*
@@ -24,7 +24,7 @@ class ListadosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listados)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar as Toolbar?)
         /*
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

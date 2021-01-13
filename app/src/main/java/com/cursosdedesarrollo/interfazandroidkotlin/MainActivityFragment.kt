@@ -1,15 +1,16 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
-import android.arch.lifecycle.Observer
-import android.support.v4.app.Fragment
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import kotlinx.android.synthetic.main.fragment_main.*
-import android.arch.lifecycle.ViewModelProviders
 import android.util.Log
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 
 
 /**
@@ -41,7 +42,7 @@ class MainActivityFragment : Fragment() {
             mViewModel.datoObservable.value="DatoObservable Cambiado $numero"
         })
         actualizaVista()
-        mViewModel.datoObservable.observe(this, Observer {cadena ->
+        mViewModel.datoObservable.observe(viewLifecycleOwner, Observer {cadena ->
             Log.d("app:","Valor: $cadena")
             vista.text=cadena
         })

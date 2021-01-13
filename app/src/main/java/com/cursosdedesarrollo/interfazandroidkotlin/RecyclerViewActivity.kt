@@ -3,10 +3,9 @@ package com.cursosdedesarrollo.interfazandroidkotlin
 import android.content.Intent
 import android.os.Bundle
 
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+
 import kotlinx.android.synthetic.main.content_recycler_view.*
-import android.support.v7.widget.DefaultItemAnimator
+
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -14,16 +13,22 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_listados.*
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewActivity : AppCompatActivity() {
 
     lateinit var movieList: MutableList<Movie>
     private var mAdapter: MoviesAdapter? = null
+    private var reciclerView: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar as Toolbar?)
         Log.d("app:RecyclerView","onCreate")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -31,6 +36,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         mAdapter = MoviesAdapter(movieList, this)
         val mLayoutManager = LinearLayoutManager(applicationContext)
+        this.reciclerView = findViewById(R.id.reciclerView)
         reciclerView!!.layoutManager = mLayoutManager
         reciclerView!!.itemAnimator = DefaultItemAnimator()
         reciclerView!!.adapter = mAdapter

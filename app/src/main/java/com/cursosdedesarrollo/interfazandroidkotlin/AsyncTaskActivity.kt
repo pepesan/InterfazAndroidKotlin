@@ -2,8 +2,6 @@ package com.cursosdedesarrollo.interfazandroidkotlin
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -16,12 +14,13 @@ import android.os.AsyncTask
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import kotlinx.android.synthetic.main.content_async_task.*
 import java.io.IOException
 import java.net.URL
 import com.cursosdedesarrollo.interfazandroidkotlin.AsyncTaskActivity.MiTarea
-
-
+import com.google.android.material.snackbar.Snackbar
 
 
 class AsyncTaskActivity : AppCompatActivity() {
@@ -33,7 +32,7 @@ class AsyncTaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_async_task)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar as Toolbar?)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
