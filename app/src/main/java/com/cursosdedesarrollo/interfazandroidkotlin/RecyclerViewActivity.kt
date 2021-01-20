@@ -49,6 +49,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        mAdapter!!.notifyDataSetChanged()
         Log.d("app:RecyclerView","onResume")
     }
 
