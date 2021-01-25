@@ -35,20 +35,25 @@ class MainActivityFragment : Fragment() {
             mViewModel.dato="Dato Cambiado"
         }
         tv.text=mViewModel.dato
-        button.setOnClickListener({
-            mViewModel.dato="Dato Cambiado2"
-            tv.text=mViewModel.dato
+        button.setOnClickListener {
             numero++
-            mViewModel.datoObservable.value="DatoObservable Cambiado $numero"
-        })
-        actualizaVista()
-        mViewModel.datoObservable.observe(viewLifecycleOwner, Observer {cadena ->
-            Log.d("app:","Valor: $cadena")
-            vista.text=cadena
+            mViewModel.dato = "Dato Cambiado $numero"
+            actualizaVista()
+            mViewModel.datoObservable.value = "DatoObservable Cambiado $numero"
+        }
+
+        // boton que cambia el livedata
+        button7.setOnClickListener{
+            numero++
+            mViewModel.datoObservable.value = "DatoObservable Cambiado $numero"
+        }
+        mViewModel.datoObservable.observe(viewLifecycleOwner, Observer {nuevo_valor ->
+            Log.d("app:","Valor: $nuevo_valor")
+            vista.text=nuevo_valor
         })
     }
 
     private fun actualizaVista() {
-        vista.text=mViewModel.dato
+        tv.text=mViewModel.dato
     }
 }
