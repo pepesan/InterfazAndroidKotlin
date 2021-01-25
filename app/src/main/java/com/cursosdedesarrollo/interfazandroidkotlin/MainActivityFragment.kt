@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_main.*
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 
@@ -25,12 +26,11 @@ class MainActivityFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
-    lateinit var mViewModel: DatoViewModel
+    val mViewModel: DatoViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tv.text="Hola Hola"
-        mViewModel = ViewModelProviders.of(this).get(DatoViewModel::class.java)
         if(mViewModel.dato == ""){
             mViewModel.dato="Dato Cambiado"
         }
