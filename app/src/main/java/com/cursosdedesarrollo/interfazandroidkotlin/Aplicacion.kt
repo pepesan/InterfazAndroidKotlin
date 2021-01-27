@@ -6,12 +6,28 @@ import android.util.Log
 class Aplicacion : Application(){
 
     public var movieList: MutableList<Movie> = mutableListOf()
+    public var bookList: MutableList<Book> = mutableListOf()
 
     override fun onCreate() {
         super.onCreate()
         Log.d("app:Aplication","onCreate")
         loadData()
+        loadBookData()
     }
+
+    private fun loadBookData() {
+        var book = Book("El color de la Magia", "Terry Prattchet", "285")
+        bookList.add(book)
+        book = Book("El color de la Magia", "Terry Prattchet", "285")
+        bookList.add(book)
+        book = Book("El color de la Magia", "Terry Prattchet", "285")
+        bookList.add(book)
+        book = Book("El color de la Magia", "Terry Prattchet", "285")
+        bookList.add(book)
+        book = Book("El color de la Magia", "Terry Prattchet", "285")
+        bookList.add(book)
+    }
+
     fun loadData(){
         var movie = Movie("Mad Max: Fury Road", "Action & Adventure", "2015")
         movieList.add(movie)

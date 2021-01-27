@@ -10,10 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BookRecycleViewActivity"></activity>
+        <activity
+            android:name=".RecicleViewFragmentActivity"
+            android:label="@string/title_activity_recicle_view_fragment"></activity>
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
         <activity
             android:name=".ListadoFragmentActivity"
             android:label="@string/title_activity_listado_fragment"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

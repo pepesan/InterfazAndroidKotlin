@@ -49,6 +49,16 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.action_book_recyclerview -> {
+                val intent = Intent(this,BookRecycleViewActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.action_show_recyclerview_fragment -> {
+                val intent = Intent(this,RecicleViewFragmentActivity::class.java)
+                startActivity(intent)
+                true
+            }
             R.id.action_alert_dialog -> {
                 val intent = Intent(this,AlertDialogActivity::class.java)
                 startActivity(intent)
