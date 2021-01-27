@@ -8,10 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
-
 import kotlinx.android.synthetic.main.activity_add_movie.*
 import kotlinx.android.synthetic.main.content_add_movie.*
-import kotlinx.android.synthetic.main.movies_row.*
+
 
 class AddMovieActivity : AppCompatActivity() {
 

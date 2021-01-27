@@ -13,6 +13,11 @@
         android:title="Listados"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_listado_fragment"
+        android:orderInCategory="100"
+        android:title="Listados con fragmentos"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_formulario"
         android:orderInCategory="100"
         android:title="Formulario"

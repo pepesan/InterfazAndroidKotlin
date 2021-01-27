@@ -34,6 +34,11 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.action_listado_fragment -> {
+                var intent = Intent(this,ListadoFragmentActivity::class.java)
+                startActivity(intent)
+                true
+            }
             R.id.action_formulario -> {
                 var intent = Intent(this,FormularioActivity::class.java)
                 startActivity(intent)
