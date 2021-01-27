@@ -73,6 +73,7 @@ android:orientation="vertical" >
             android:id="@+id/edittext"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:hint="numero de telefono"
             android:inputType="phone" />
 

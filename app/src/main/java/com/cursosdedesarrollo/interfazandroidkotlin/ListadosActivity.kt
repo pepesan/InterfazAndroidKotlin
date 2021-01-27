@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.snackbar.Snackbar
 
 import kotlinx.android.synthetic.main.activity_listados.*
 import kotlinx.android.synthetic.main.content_formulario.*
@@ -17,7 +18,7 @@ import kotlinx.android.synthetic.main.content_listados.*
 
 class ListadosActivity : AppCompatActivity() {
 
-    private val datos = mutableListOf("uno", "dos")
+    private val datos: MutableList<String> = mutableListOf("uno", "dos", "Tres")
 
     private lateinit var adapter: ArrayAdapter<String>
 
@@ -25,12 +26,11 @@ class ListadosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listados)
         setSupportActionBar(toolbar as Toolbar?)
-        /*
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+
+        fab.setOnClickListener {
+            addData()
         }
-        */
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         texto.setVisibility(View.GONE)
@@ -59,12 +59,16 @@ class ListadosActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_add_listado -> {
-                datos.add("pepe")
-                adapter.notifyDataSetChanged()
+                addData()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun addData() {
+        datos.add("pepe")
+        adapter.notifyDataSetChanged()
     }
 
 }
