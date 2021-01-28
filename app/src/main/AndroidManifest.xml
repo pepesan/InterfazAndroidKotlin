@@ -10,10 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BookRecycleViewActivity"></activity>
+        <activity android:name=".CarRecycleViewActivity"></activity>
+        <activity android:name=".BookRecycleViewActivity" />
         <activity
             android:name=".RecicleViewFragmentActivity"
-            android:label="@string/title_activity_recicle_view_fragment"></activity>
+            android:label="@string/title_activity_recicle_view_fragment" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.

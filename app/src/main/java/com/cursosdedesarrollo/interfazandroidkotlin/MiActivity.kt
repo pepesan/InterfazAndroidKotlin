@@ -54,6 +54,11 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.action_car_recyclerview -> {
+                val intent = Intent(this,CarRecycleViewActivity::class.java)
+                startActivity(intent)
+                true
+            }
             R.id.action_show_recyclerview_fragment -> {
                 val intent = Intent(this,RecicleViewFragmentActivity::class.java)
                 startActivity(intent)
