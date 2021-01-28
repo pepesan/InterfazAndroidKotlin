@@ -7,12 +7,26 @@ class Aplicacion : Application(){
 
     public var movieList: MutableList<Movie> = mutableListOf()
     public var bookList: MutableList<Book> = mutableListOf()
+    var carList :  MutableList<Car> = mutableListOf()
 
     override fun onCreate() {
         super.onCreate()
         Log.d("app:Aplication","onCreate")
         loadData()
         loadBookData()
+        loadCars()
+    }
+
+    private fun loadCars() {
+        var car = Car("Toyota", "Auris")
+        carList.add(car)
+        car = Car("Toyota", "Auris")
+        carList.add(car)
+        car = Car("Toyota", "Auris")
+        carList.add(car)
+        car = Car("Toyota", "Auris")
+        carList.add(car)
+        Log.d("app:Application", carList.toString())
     }
 
     private fun loadBookData() {
