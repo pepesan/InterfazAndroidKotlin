@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-@SuppressLint("Registered")
+
 open class MiActivity : AppCompatActivity() {
 
 
