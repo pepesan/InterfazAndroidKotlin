@@ -97,7 +97,7 @@ class Aplicacion : Application(){
     }
     fun findDataByTitle(title: String):Movie{
         for (item in movieList){
-            if (item.title==title){
+            if (item.title.toString() == title){
                 return item
             }
         }
