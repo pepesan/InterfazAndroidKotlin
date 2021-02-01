@@ -30,7 +30,7 @@ class AlertDialogActivity : AppCompatActivity() {
 
     fun showAlert(v:View){
         // Initialize a new instance of
-        val builder = AlertDialog.Builder(this@AlertDialogActivity)
+        val builder = AlertDialog.Builder(this)
 
         // Set the alert dialog title
         builder.setTitle("App background color")

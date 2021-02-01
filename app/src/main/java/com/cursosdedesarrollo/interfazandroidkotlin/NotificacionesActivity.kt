@@ -47,7 +47,8 @@ class NotificacionesActivity : AppCompatActivity() {
 
         //Notification Channel
         val importance = NotificationManager.IMPORTANCE_LOW
-        val notificationChannel = NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, importance)
+        val notificationChannel = NotificationChannel(
+                NOTIFICATION_CHANNEL_ID, channelName, importance)
         notificationChannel.enableLights(true)
         notificationChannel.lightColor = Color.RED
         notificationChannel.enableVibration(true)
