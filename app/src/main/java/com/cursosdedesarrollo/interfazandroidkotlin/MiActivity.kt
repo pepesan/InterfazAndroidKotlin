@@ -79,6 +79,11 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.action_fragment_notificaciones -> {
+                val intent = Intent(this,NotificationsFragmentActivity::class.java)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

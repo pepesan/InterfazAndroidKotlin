@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CarRecycleViewActivity"></activity>
+        <activity android:name=".NotificationsFragmentActivity"></activity>
+        <activity android:name=".CarRecycleViewActivity" />
         <activity android:name=".BookRecycleViewActivity" />
         <activity
             android:name=".RecicleViewFragmentActivity"

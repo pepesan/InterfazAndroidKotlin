@@ -40,4 +40,9 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_recicle_view_fragment">RecicleViewFragmentActivity</string>
     <string name="listado_vacio">Listado vacio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre">Nombre:</string>
+    <string name="nombre_hint">Nombre</string>
+    <string name="button">Button</string>
 </resources>
