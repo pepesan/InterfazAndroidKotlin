@@ -45,4 +45,5 @@
     <string name="nombre">Nombre:</string>
     <string name="nombre_hint">Nombre</string>
     <string name="button">Button</string>
+    <string name="numero_de_telefono">numero de telefono</string>
 </resources>

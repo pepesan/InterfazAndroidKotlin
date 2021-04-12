@@ -17,6 +17,8 @@ import kotlinx.android.synthetic.main.content_formulario.*
 
 class FormularioActivity : AppCompatActivity() {
 
+    var actionEnabled = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario)
@@ -41,7 +43,7 @@ class FormularioActivity : AppCompatActivity() {
             finish()
         })
         // cambiamos los comportamientos que no son click
-        edittext.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        edittext.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             // If the event is a key-down event on the "enter" button
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 // Perform action on key press
@@ -52,7 +54,7 @@ class FormularioActivity : AppCompatActivity() {
             false
         })
 
-        val i = RatingBar.OnRatingBarChangeListener { ratingBar, rating, fromUser ->
+        val i = RatingBar.OnRatingBarChangeListener { _, rating, _ ->
             Toast.makeText(
                     this@FormularioActivity,
                     "New Rating: $rating",
@@ -61,6 +63,11 @@ class FormularioActivity : AppCompatActivity() {
         ratingbar.onRatingBarChangeListener = i
 
 
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        menu?.findItem(R.id.action_add)?.isEnabled = actionEnabled;
+        return super.onPrepareOptionsMenu(menu)
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -82,7 +89,7 @@ class FormularioActivity : AppCompatActivity() {
     }
 
     // cambio de comportamiento del boton con imagen
-    fun ImageClick(v: View) {
+    fun imageClick(v: View) {
         // Perform action on clicks
         val t = Toast.makeText(this, "Beep Bop", Toast.LENGTH_SHORT)
         t.show()
@@ -96,13 +103,14 @@ class FormularioActivity : AppCompatActivity() {
 
     // cambio de comportamiento de la checkbox
     fun checkBoxClick(v: View) {
+        actionEnabled = !actionEnabled
         var text = ""
         // Perform action on clicks, depending on whether it's now checked
         // CheckBox cb=(CheckBox) v;
-        if (checkbox.isChecked()) {
+        if (checkbox.isChecked) {
             text = "Selected"
-            send.setEnabled(true)
-            Toast.makeText(this,
+            send.isEnabled = true
+            Toast.makeText(this@FormularioActivity,
                     "Ya puedes Salvar",
                     Toast.LENGTH_LONG).show()
         } else {
@@ -111,8 +119,8 @@ class FormularioActivity : AppCompatActivity() {
                     "Hasta que no marques la casilla no podrás salvar",
                     Toast.LENGTH_LONG).show()
             text = "Not selected"
-
         }
+        invalidateOptionsMenu()
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 
@@ -131,7 +139,7 @@ class FormularioActivity : AppCompatActivity() {
     fun toggleClick(v: View) {
         //ToggleButton tb=(ToggleButton)v;
         // Perform action on clicks
-        if (togglebutton.isChecked()) {
+        if (togglebutton.isChecked) {
             //if (tb.isChecked()) {
             Toast.makeText(this@FormularioActivity, "Checked",
                     Toast.LENGTH_SHORT).show()
