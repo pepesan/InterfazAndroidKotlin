@@ -34,19 +34,19 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        texto.setVisibility(View.GONE)
+        texto.visibility = View.GONE
         listado.visibility=View.VISIBLE
 
 
-        listado.setTextFilterEnabled(true)
+        listado.isTextFilterEnabled = true
         this.adapter = activity?.let { ArrayAdapter<String>(it, R.layout.item, datos) }!!
         listado.adapter= this.adapter
-        listado.setOnItemClickListener(AdapterView.OnItemClickListener {
+        listado.onItemClickListener = AdapterView.OnItemClickListener {
             parent, view, position, id ->
             datos.removeAt(position)
             adapter.notifyDataSetChanged()
-        })
-        view?.findViewById<FloatingActionButton>(R.id.fab)?.setOnClickListener { view ->
+        }
+        view.findViewById<FloatingActionButton>(R.id.fab)?.setOnClickListener { _ ->
             addData()
         }
     }

@@ -37,15 +37,15 @@ class ListadosActivity : AppCompatActivity() {
         listado.visibility=View.VISIBLE
 
         adapter = ArrayAdapter<String>(this, R.layout.item, datos)
-        listado.setTextFilterEnabled(true)
+        listado.isTextFilterEnabled = true
         listado.adapter=adapter
         //listado.setAdapter(adapter)
-        listado.setOnItemClickListener(AdapterView.OnItemClickListener {
+        listado.onItemClickListener = AdapterView.OnItemClickListener {
             parent, view, position, id ->
             Toast.makeText(this@ListadosActivity, datos[position], Toast.LENGTH_LONG).show()
             datos.removeAt(position)
             adapter.notifyDataSetChanged()
-        })
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
