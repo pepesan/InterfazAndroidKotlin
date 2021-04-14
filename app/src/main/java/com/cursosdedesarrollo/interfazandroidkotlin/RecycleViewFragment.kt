@@ -2,10 +2,10 @@ package com.cursosdedesarrollo.interfazandroidkotlin
 
 import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +19,7 @@ class RecycleViewFragment : Fragment() {
     private var dato: String?=""
 
     lateinit var movieList: MutableList<Movie>
-    private var mAdapter: MoviesAdapter? = null
+    private var mAdapter: MoviesFragmentAdapter? = null
     private var reciclerView: RecyclerView? = null
     private var fab: FloatingActionButton? = null
 
@@ -36,11 +36,14 @@ class RecycleViewFragment : Fragment() {
 
         fab = view.findViewById(R.id.fab)
         fab?.setOnClickListener{
+            saltaAdd()
+            /*
             val movie: Movie = Movie("Matrix","CiFi", "1999")
             movieList.add(movie)
             prepareMovieData()
+             */
         }
-        mAdapter = MoviesAdapter(movieList, activity!!)
+        mAdapter = MoviesFragmentAdapter(movieList, activity!!, this)
         val mLayoutManager = LinearLayoutManager(activity)
         this.reciclerView = view.findViewById(R.id.reciclerView)
         reciclerView!!.layoutManager = mLayoutManager
@@ -52,5 +55,13 @@ class RecycleViewFragment : Fragment() {
     }
     private fun prepareMovieData() {
         mAdapter!!.notifyDataSetChanged()
+    }
+
+    fun saltaDetalle(position: Int){
+        (activity?.application as Aplicacion).moviePosition = position
+        findNavController().navigate(R.id.action_MovieFragment_to_detailMovieFragment)
+    }
+    fun saltaAdd(){
+        findNavController().navigate(R.id.action_MovieFragment_to_addMovieFragment)
     }
 }

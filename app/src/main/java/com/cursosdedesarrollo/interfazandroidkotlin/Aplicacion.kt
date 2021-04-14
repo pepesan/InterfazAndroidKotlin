@@ -8,6 +8,7 @@ class Aplicacion : Application(){
     public var movieList: MutableList<Movie> = mutableListOf()
     public var bookList: MutableList<Book> = mutableListOf()
     var carList :  MutableList<Car> = mutableListOf()
+    var moviePosition: Int = 0
 
     override fun onCreate() {
         super.onCreate()

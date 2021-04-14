@@ -1,17 +1,18 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 
-class MoviesAdapter(private val moviesList: List<Movie>,val context: Context)
-    : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>(){
+class MoviesFragmentAdapter(private val moviesList: List<Movie>, val context: Context, val fragment: Fragment)
+    : RecyclerView.Adapter<MoviesFragmentAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) , View.OnClickListener{
         private var mItem: Movie? = null
@@ -37,13 +38,13 @@ class MoviesAdapter(private val moviesList: List<Movie>,val context: Context)
         }
 
         override fun onClick(view: View) {
-            val intent = Intent(context ,MovieDetailActivity::class.java)
-            intent.putExtra("title", mItem!!.title)
-            intent.putExtra("position", position)
-            (context as Activity).startActivity(intent)
+            // Saltar entre fragmentos
+            Log.d("app:","Salto a detalle")
+            (fragment as RecycleViewFragment).saltaDetalle(position!!)
         }
 
     }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

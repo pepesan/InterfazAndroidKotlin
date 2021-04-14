@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MovieFragment">
+
+    <fragment
+        android:id="@+id/MovieFragment"
+        android:name="com.cursosdedesarrollo.interfazandroidkotlin.RecycleViewFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_recycleview">
+        <action
+            android:id="@+id/action_MovieFragment_to_addMovieFragment"
+            app:destination="@id/addMovieFragment" />
+        <action
+            android:id="@+id/action_MovieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMovieFragment"
+        android:name="com.cursosdedesarrollo.interfazandroidkotlin.AddMovieFragment"
+        android:label="fragment_add_movie"
+        tools:layout="@layout/fragment_add_movie" >
+        <action
+            android:id="@+id/action_addMovieFragment_to_MovieFragment"
+            app:destination="@id/MovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="com.cursosdedesarrollo.interfazandroidkotlin.DetailMovieFragment"
+        android:label="fragment_detailt_movie"
+        tools:layout="@layout/fragment_detail_movie" >
+        <action
+            android:id="@+id/action_detailMovieFragment_to_MovieFragment"
+            app:destination="@id/MovieFragment" />
+    </fragment>
+
+</navigation>
