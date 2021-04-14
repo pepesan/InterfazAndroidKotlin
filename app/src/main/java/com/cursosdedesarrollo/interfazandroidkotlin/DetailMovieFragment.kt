@@ -32,7 +32,7 @@ class DetailMovieFragment : Fragment() {
         setHasOptionsMenu(true)
         val aplicacion: Aplicacion =(activity?.application as Aplicacion)
         val position =  aplicacion.moviePosition
-        val movie = aplicacion.movieList.get(position)
+        val movie = aplicacion.movieList[position]
         detail_title.text= movie.title
         position_label_text.text = position.toString()
 
