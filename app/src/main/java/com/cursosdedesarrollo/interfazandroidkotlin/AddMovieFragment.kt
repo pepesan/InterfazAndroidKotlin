@@ -1,11 +1,17 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
+
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.content_add_movie.*
+
 
 
 /**
@@ -20,6 +26,13 @@ class AddMovieFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_movie, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        activity?.title = "Add Movie"
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -37,11 +50,16 @@ class AddMovieFragment : Fragment() {
                 saveMovie()
                 true
             }
+            android.R.id.home -> {
+                findNavController().navigate(R.id.action_addMovieFragment_to_MovieFragment)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
     private fun saveMovie() {
         if(titleText.text.toString()!="") {
+            (activity as RecicleViewFragmentActivity).hideKeyboard()
             val movie = Movie(titleText.text.toString(), genreText.text.toString(), yearText.text.toString())
             (activity?.application as Aplicacion).addData(movie)
             findNavController().navigate(R.id.action_addMovieFragment_to_MovieFragment)
