@@ -11,11 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.navigation.fragment.findNavController
-import androidx.work.*
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
-import kotlinx.android.synthetic.main.fragment_workmanager.*
 import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
@@ -27,7 +23,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class WorkManagerFragment : Fragment() {
+class CoroutineFragment : Fragment() {
     var tvDownload: TextView? = null
     var button: Button? = null
     var progressBar: ProgressBar? = null
@@ -39,7 +35,7 @@ class WorkManagerFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_workmanager, container, false)
+        return inflater.inflate(R.layout.fragment_coroutine, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

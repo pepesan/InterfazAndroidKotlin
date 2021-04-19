@@ -1,13 +1,9 @@
 package com.cursosdedesarrollo.interfazandroidkotlin
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 open class MiActivity : AppCompatActivity() {
@@ -85,7 +81,7 @@ open class MiActivity : AppCompatActivity() {
                 true
             }
             R.id.action_workmanager -> {
-                val intent = Intent(this,WorkManagerActivity::class.java)
+                val intent = Intent(this,CoroutineActivity::class.java)
                 startActivity(intent)
                 true
             }

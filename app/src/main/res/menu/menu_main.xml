@@ -65,6 +65,6 @@
     <item
         android:id="@+id/action_workmanager"
         android:orderInCategory="100"
-        android:title="Workmanager con fragmento"
+        android:title="Coroutine con fragmento"
         app:showAsAction="never" />
 </menu>
