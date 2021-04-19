@@ -63,8 +63,13 @@
         android:title="Notificaciones con fragmento"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_workmanager"
+        android:id="@+id/action_coroutine"
         android:orderInCategory="100"
         android:title="Coroutine con fragmento"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_workmanager"
+        android:orderInCategory="100"
+        android:title="Workmanager con fragmento"
         app:showAsAction="never" />
 </menu>

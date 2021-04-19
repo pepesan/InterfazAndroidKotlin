@@ -80,8 +80,13 @@ open class MiActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
-            R.id.action_workmanager -> {
+            R.id.action_coroutine -> {
                 val intent = Intent(this,CoroutineActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.action_workmanager -> {
+                val intent = Intent(this, WorkManagerActivity::class.java)
                 startActivity(intent)
                 true
             }
