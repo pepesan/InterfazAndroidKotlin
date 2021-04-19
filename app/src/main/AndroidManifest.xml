@@ -10,16 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NotificationsFragmentActivity"></activity>
+        <activity
+            android:name=".WorkManagerActivity"
+            android:label="@string/title_activity_work_manager"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <activity android:name=".NotificationsFragmentActivity" />
         <activity android:name=".CarRecycleViewActivity" />
         <activity android:name=".BookRecycleViewActivity" />
         <activity
             android:name=".RecicleViewFragmentActivity"
             android:label="@string/title_activity_recicle_view_fragment" />
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
         <activity
             android:name=".ListadoFragmentActivity"
             android:label="@string/title_activity_listado_fragment"
@@ -34,6 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
         <activity
             android:name=".LayoutsActivity"
             android:label="@string/title_activity_layouts"
