@@ -71,15 +71,17 @@ dependencies {
     // testImplementation "androidx.core:core-testing:$lifecycle_version"
 
     // Dependencias ejemplo workmanager
-    def work_version = "2.5.0"
+    // workmanager
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
     // Kotlin + coroutines
-    implementation "androidx.work:work-runtime-ktx:$work_version"
+    implementation "android.arch.work:work-runtime-ktx:1.0.1"
+    // optional - RxJava2 support
+    implementation "android.arch.work:work-rxjava2:1.0.1"
     implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.squareup.okhttp3:okhttp:3.13.1'
     implementation 'org.greenrobot:eventbus:3.1.1'
-
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
