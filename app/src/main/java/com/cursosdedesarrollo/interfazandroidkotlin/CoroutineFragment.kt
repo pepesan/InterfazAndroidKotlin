@@ -23,7 +23,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class CoroutineFragment : Fragment() {
+class   CoroutineFragment : Fragment() {
     var tvDownload: TextView? = null
     var button: Button? = null
     var progressBar: ProgressBar? = null

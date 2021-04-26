@@ -60,8 +60,8 @@ class AsyncTaskActivity : AppCompatActivity() {
     }
     inner class MiTarea : AsyncTask<String, Int, Bitmap>() {
         override fun onPreExecute() {
-            cargando.setVisibility(View.VISIBLE)
-            imageView1.setVisibility(View.GONE)
+            cargando.visibility = View.VISIBLE
+            imageView1.visibility = View.GONE
             //descarga.setEnabled(false);
         }
 
@@ -95,8 +95,8 @@ class AsyncTaskActivity : AppCompatActivity() {
         override fun onPostExecute(bm: Bitmap) {
 
             imageView1.setImageBitmap(bm)
-            cargando.setVisibility(View.GONE)
-            imageView1.setVisibility(View.VISIBLE)
+            cargando.visibility = View.GONE
+            imageView1.visibility = View.VISIBLE
             //dialog.dismiss();
 
             //descarga.setEnabled(true);
